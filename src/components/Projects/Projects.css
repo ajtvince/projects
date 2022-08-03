@@ -1,0 +1,40 @@
+.projectsContainer {
+    width:60%;
+    margin:auto;
+}
+
+.projectsContainer > .projectContainer {
+    width:100%;
+    color:white;
+    padding-bottom:6rem;
+}
+
+.projectsContainer > .projectContainer > img {
+    width:100%;
+}
+
+.projectsContainer > .projectContainer > #projectName {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.projectsContainer > .projectContainer > #projectName > a {
+    font-size: 2rem;
+    color:white;
+}
+
+.projectsContainer > .projectContainer > #projectName > a:hover {
+    color:rgb(201, 201, 201);
+}
+
+.projectsContainer > .projectContainer > #projectSkills {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.projectsContainer > .projectContainer > #projectSkills > svg {
+    text-align: center;
+    font-size: 2rem;
+    padding:1rem;
+}
+

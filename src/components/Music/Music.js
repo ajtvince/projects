@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause, faForward, faBackward } from '@fortawesome/free-solid-svg-icons';
 import './Music.css';
 
 function Music() {
@@ -218,6 +220,7 @@ function Music() {
         let audio = document.querySelector('audio');
         let progressBar = document.getElementById('songProgress');
         let durationDiff = songDuration;
+        let playButton = document.getElementById('playIcon');
         console.log('full song length' + durationDiff + ' p ' + prevWidth + ' s ' + newWidth);
         if (prevWidth > 0) {
             durationDiff = songDuration - (songDuration * (prevWidth / 100));
@@ -232,9 +235,13 @@ function Music() {
         };
         if (audio.paused) {
             console.log('prev:' + prevWidth + ' new: ' + newWidth);
-            progressBar.style.width = `${prevWidth}%`
+            progressBar.style.width = `${prevWidth}%`;
+            document.getElementById('pauseIcon').style.display = 'none';
+            document.getElementById('playIcon').style.display = 'inline-block';
         } else {
             progressBar.animate(progressBarDistance, progressBarTiming);
+            document.getElementById('playIcon').style.display = 'none';
+            document.getElementById('pauseIcon').style.display = 'inline-block';
         }
     }
 
@@ -248,6 +255,8 @@ function Music() {
             x.cancel();
         });
         console.log(audioData);
+        document.getElementById('pauseIcon').style.display = 'none';
+        document.getElementById('playIcon').style.display = 'inline-block';
         document.getElementById('songProgress').style.width = `${audioData.progressPercent}%`
     }
 
@@ -315,9 +324,9 @@ function Music() {
                 </div>
                 <div className='buttonContainer'>
                     <div className='playButtonContainer'>
-                        <button id='previousButton' onClick={onChangePreviousSong}>{'<'}</button>
-                        <button id='playButton' onClick={onPlayButtonClicked}>{'|>'}</button>
-                        <button id='nextButton' onClick={onChangeNextSong}>{'>'}</button>
+                        <button id='previousButton' onClick={onChangePreviousSong}><FontAwesomeIcon icon={faBackward} /></button>
+                        <button id='playButton' onClick={onPlayButtonClicked}><FontAwesomeIcon id='playIcon' icon={faPlay} /><FontAwesomeIcon style={{display:'none'}} id='pauseIcon' icon={faPause} /></button>
+                        <button id='nextButton' onClick={onChangeNextSong}><FontAwesomeIcon icon={faForward} /></button>
                     </div>
                     <div className='songLength'>
                         <div onMouseMove={getCursorCoords} onClick={onTimeSelect}>

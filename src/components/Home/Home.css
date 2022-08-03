@@ -1,0 +1,48 @@
+.homeContainer {
+    width:100%;
+    height:100%;
+}
+
+.homeContainer > .homeOverview {
+    width:80%;
+    max-width: 1080px;
+    margin:auto;
+    text-align: center;
+    color:whitesmoke;
+    padding-top:1rem;
+    height:auto;
+}
+
+.homeContainer > .homeOverview > div:nth-child(1) {
+    font-size:5rem;
+    height:5rem;
+}
+.homeContainer > .homeOverview > div:nth-child(2) {
+    font-size:3rem;
+}
+
+.homeSkills > .skillContainer {
+    width:200px;
+    display: inline-block;
+}
+
+.homeSkills > .skillContainer > span {
+    width:100%;
+    font-size: 2rem;
+}
+
+.homeSkills > .skillContainer > #skillIcon {
+    width:100%;
+    font-size: 4rem;
+}
+
+.homeSkills > div:nth-child(1) {
+    font-size:3rem;
+}
+
+.homeOverview > img {
+    width:100%;
+    max-width: 800px;
+    height:400px;
+    object-fit: cover;
+}
