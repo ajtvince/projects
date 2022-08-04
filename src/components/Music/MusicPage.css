@@ -19,3 +19,14 @@
 #miniMusic {
     position:relative;
 }
+
+#projectSkills {
+    text-align: center;
+    font-size: 2rem;
+}
+
+#projectSkills > svg {
+    text-align: center;
+    font-size: 2rem;
+    padding:1rem;
+}
