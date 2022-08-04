@@ -123,7 +123,7 @@ function Music() {
         //}
         console.log(controlsML);
         console.log(progressPL);
-        if (window.location.href !== 'http://localhost:3000/music') {
+        if (window.location.href !== `${publicPath}music`) {
             controlsML = 144;
         }
         //add together and determine coord where progressbar starts
@@ -266,7 +266,7 @@ function Music() {
     useEffect(() => {
         let audio = document.querySelector('audio');
         audio.addEventListener('ended', () => {
-            let newSongIndex = playlist.findIndex(x => ('http://localhost:3000/' + x.src) === audio.src);
+            let newSongIndex = playlist.findIndex(x => (`${publicPath}' + x`src) === audio.src);
             console.log(newSongIndex);
             if (newSongIndex >= playlist.length-1) {
                 selectNewSong(playlist[0]);
@@ -278,7 +278,7 @@ function Music() {
             console.log(newSongIndex);
         });
         document.getElementById('miniMusic').classList.remove('miniMusicBox');
-        if(window.location.href !== 'http://localhost:3000/music') {
+        if(window.location.href !== `${publicPath}music`) {
             document.getElementById('miniMusic').className = ('noMiniMusic');
         }
         for (let x=0;x<4;x++) {
@@ -288,7 +288,7 @@ function Music() {
         audio.volume = .5;
         console.log(window.location.href);
         window.addEventListener('popstate', () => {
-            if (window.location.href !== 'http://localhost:3000/music') {
+            if (window.location.href !== `${publicPath}music`) {
                 document.getElementById('miniMusic').className = 'miniMusicBox';
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('img')[0].removeAttribute('id');
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('div')[0].removeAttribute('id');
@@ -305,7 +305,7 @@ function Music() {
             }
         });
         window.addEventListener('click', () => {
-            if (window.location.href !== 'http://localhost:3000/music') {
+            if (window.location.href !== `${publicPath}music`) {
                 document.getElementById('miniMusic').className = 'miniMusicBox';
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('img')[0].removeAttribute('id');
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('div')[0].removeAttribute('id');
