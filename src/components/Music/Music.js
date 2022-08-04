@@ -8,8 +8,6 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 function Music() {
 
     const playlist = [{'songName': 'Need Ya', 'img': 'audio/song1/art.jpg', 'src': 'audio/song1/song1.mp3', 'artist':'Syn Cole', 'duration':'160'}, {'songName': 'If I Disappear (ft. Tom Mårtensson)', 'img': 'audio/song2/art.png', 'src':'audio/song2/song2.mp3', 'artist':'Tobu', 'duration':'208'}, {'songName':'On & On (feat. Daniel Levi) [NCS Release]', 'img':'audio/song3/art.jpg', 'src':'audio/song3/song3.mp3', 'artist':'Cartoon', 'duration': '208'}, {'songName':'Safe & Sound', 'img':'audio/song4/art.jpg', 'src':'audio/song4/song4.mp3', 'artist':'DEAF KEV', 'duration':'209'}];
-    const publicPath = process.env.PUBLIC_URL;
-    console.log(publicPath);
     const [currentTime=0, setCurrentTime] = useState();
     const [newSongTime=0, setNewSongTime] = useState();
     const [audioState=false, setAudioState] = useState();
@@ -124,7 +122,7 @@ function Music() {
         //}
         console.log(controlsML);
         console.log(progressPL);
-        if (window.location.href !== `${publicPath}music`) {
+        if (window.location.href !== `${window.location.origin}/music`) {
             controlsML = 144;
         }
         //add together and determine coord where progressbar starts
@@ -168,7 +166,7 @@ function Music() {
         let audio = document.querySelector('audio');
         let newSongIndex = playlist.findIndex(x => (x.src) === obj.src);
         console.log(newSongIndex);
-        audio.src = publicPath + playlist[newSongIndex].src; 
+        audio.src = window.location.origin + '/' + playlist[newSongIndex].src; 
         audio.load();
         audio.play();
         let audioData = {'newAudioTime': 0, 'progressPercent': 0};
@@ -268,7 +266,7 @@ function Music() {
         console.log(process.env.PUBLIC_URL);
         let audio = document.querySelector('audio');
         audio.addEventListener('ended', () => {
-            let newSongIndex = playlist.findIndex(x => (publicPath + x.src) === audio.src);
+            let newSongIndex = playlist.findIndex(x => (window.location.origin + '/' + x.src) === audio.src);
             console.log(newSongIndex);
             if (newSongIndex >= playlist.length-1) {
                 selectNewSong(playlist[0]);
@@ -280,7 +278,7 @@ function Music() {
             console.log(newSongIndex);
         });
         document.getElementById('miniMusic').classList.remove('miniMusicBox');
-        if(window.location.href !== `${publicPath}music`) {
+        if(window.location.href !== `${window.location.origin}/music`) {
             document.getElementById('miniMusic').className = ('noMiniMusic');
         }
         for (let x=0;x<4;x++) {
@@ -290,7 +288,7 @@ function Music() {
         audio.volume = .5;
         console.log(window.location.href);
         window.addEventListener('popstate', () => {
-            if (window.location.href !== `${publicPath}music`) {
+            if (window.location.href !== `${window.location.origin}/music`) {
                 document.getElementById('miniMusic').className = 'miniMusicBox';
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('img')[0].removeAttribute('id');
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('div')[0].removeAttribute('id');
@@ -307,7 +305,7 @@ function Music() {
             }
         });
         window.addEventListener('click', () => {
-            if (window.location.href !== `${publicPath}music`) {
+            if (window.location.href !== `${window.location.origin}/music`) {
                 document.getElementById('miniMusic').className = 'miniMusicBox';
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('img')[0].removeAttribute('id');
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('div')[0].removeAttribute('id');
