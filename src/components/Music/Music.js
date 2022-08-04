@@ -9,6 +9,7 @@ function Music() {
 
     const playlist = [{'songName': 'Need Ya', 'img': 'audio/song1/art.jpg', 'src': 'audio/song1/song1.mp3', 'artist':'Syn Cole', 'duration':'160'}, {'songName': 'If I Disappear (ft. Tom Mårtensson)', 'img': 'audio/song2/art.png', 'src':'audio/song2/song2.mp3', 'artist':'Tobu', 'duration':'208'}, {'songName':'On & On (feat. Daniel Levi) [NCS Release]', 'img':'audio/song3/art.jpg', 'src':'audio/song3/song3.mp3', 'artist':'Cartoon', 'duration': '208'}, {'songName':'Safe & Sound', 'img':'audio/song4/art.jpg', 'src':'audio/song4/song4.mp3', 'artist':'DEAF KEV', 'duration':'209'}];
     const publicPath = process.env.PUBLIC_URL;
+    console.log(publicPath);
     const [currentTime=0, setCurrentTime] = useState();
     const [newSongTime=0, setNewSongTime] = useState();
     const [audioState=false, setAudioState] = useState();
@@ -264,6 +265,7 @@ function Music() {
     }, [currentSongIndex]);
 
     useEffect(() => {
+        console.log(process.env.PUBLIC_URL);
         let audio = document.querySelector('audio');
         audio.addEventListener('ended', () => {
             let newSongIndex = playlist.findIndex(x => (publicPath + x.src) === audio.src);
