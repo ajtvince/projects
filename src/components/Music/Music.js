@@ -266,7 +266,7 @@ function Music() {
     useEffect(() => {
         let audio = document.querySelector('audio');
         audio.addEventListener('ended', () => {
-            let newSongIndex = playlist.findIndex(x => (`${publicPath}' + x`src) === audio.src);
+            let newSongIndex = playlist.findIndex(x => (publicPath + x.src) === audio.src);
             console.log(newSongIndex);
             if (newSongIndex >= playlist.length-1) {
                 selectNewSong(playlist[0]);
