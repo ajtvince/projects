@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faForward, faBackward, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause, faForward, faBackward, faHome, faX } from '@fortawesome/free-solid-svg-icons';
 import './Music.css';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -103,15 +103,32 @@ function Music() {
         //controls container margin left
         //buttoncontainer padding left
         //child div margin left
+        let songLengthDiv = document.getElementsByClassName('songLength')[0];
         let x = document.getElementsByClassName('songLength')[0].firstChild;
         let progressWidth = parseInt(getComputedStyle(x).width);
         let tempCursorX = parseInt(e.clientX);
         let musicC = document.getElementsByClassName('musicAppContainer')[0];
-        musicC.margin = 'auto';
+        //bad one in chrome below
         let controlsML = parseInt(getComputedStyle(musicC).marginLeft);
         let progressPL = parseInt(getComputedStyle(x).marginLeft);
+        //if (controlsML === 0) {
+        let z1 = parseInt(window.innerWidth);
+        let z2 = parseInt(getComputedStyle(musicC).width);
+        controlsML = (z1 - z2) / 2;
+        //}
+        //if (progressPL === 0) {
+        let z = parseInt(getComputedStyle(songLengthDiv).width);
+        progressPL = (z - progressWidth) / 2;
+        console.log(z + ' ' + progressWidth);
+        //}
+        console.log(controlsML);
+        console.log(progressPL);
+        if (window.location.href !== 'http://localhost:3000/music') {
+            controlsML = 144;
+        }
         //add together and determine coord where progressbar starts
         let progressStartX = controlsML + progressPL;
+        console.log('start' + progressStartX + ' cursorx' + tempCursorX);
         let clickDiff = tempCursorX - progressStartX;
         let newSongDurRat = (clickDiff / progressWidth);
         //then add to progressbar based on ratio
@@ -215,6 +232,17 @@ function Music() {
         document.getElementById('playIcon').style.display = 'inline-block';
         document.getElementById('songProgress').style.width = `${audioData.progressPercent}%`
     }
+
+    const closeMiniPlayer = () => {
+        let audio = document.querySelector('audio');
+        audio.pause();
+        //document.getElementById('miniMusic').classList.remove('miniMusicBox');
+        document.getElementsByClassName('musicAppContainer')[0].style.display = 'none';
+        let curPercent = (audio.currentTime / audio.duration) * 100;
+        let audioData = {'newAudioTime': audio.currentTime, 'progressPercent': curPercent};
+        setCurrentTime(audioData.newAudioTime);
+        pauseProgressBar(audioData);
+    }
 /*
     const changeSongAfterEnd = () => {
         let audio = document.querySelector('audio');
@@ -238,8 +266,8 @@ function Music() {
     useEffect(() => {
         let audio = document.querySelector('audio');
         audio.addEventListener('ended', () => {
-            let newSongIndex = playlist.findIndex(x => (publicPath + x.src) === audio.src);
-            console.log(audio.src);
+            let newSongIndex = playlist.findIndex(x => ('http://localhost:3000/' + x.src) === audio.src);
+            console.log(newSongIndex);
             if (newSongIndex >= playlist.length-1) {
                 selectNewSong(playlist[0]);
                 setCurrentSongIndex(0);
@@ -265,7 +293,10 @@ function Music() {
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('img')[0].removeAttribute('id');
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('div')[0].removeAttribute('id');
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('div')[0].removeAttribute('id');
+                document.getElementById('closeMiniPlayer').style.display = 'block';
             } else {
+                document.getElementById('closeMiniPlayer').style.display = 'none';
+                document.getElementsByClassName('musicAppContainer')[0].style.display = 'block';
                 document.getElementById('miniMusic').classList.remove('miniMusicBox');
                 document.getElementById('miniMusic').classList.remove('noMiniMusic');
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('img')[0].setAttribute('id', 'albumArt');
@@ -279,7 +310,10 @@ function Music() {
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('img')[0].removeAttribute('id');
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('div')[0].removeAttribute('id');
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('div')[0].removeAttribute('id');
+                document.getElementById('closeMiniPlayer').style.display = 'block';
             } else {
+                document.getElementById('closeMiniPlayer').style.display = 'none';
+                document.getElementsByClassName('musicAppContainer')[0].style.display = 'block';
                 document.getElementById('miniMusic').classList.remove('miniMusicBox');
                 document.getElementById('miniMusic').classList.remove('noMiniMusic');
                 document.getElementsByClassName('songInfoContainer')[0].getElementsByTagName('img')[0].setAttribute('id', 'albumArt');
@@ -299,6 +333,7 @@ function Music() {
                         <img onClick={loadPlaylist} src={ playlist[currentSongIndex].img } id='albumArt'></img>
                         <div id='songName'>{ playlist[currentSongIndex].songName }</div>
                         <div id='artistName'>{ playlist[currentSongIndex].artist }</div>
+                        <div id='closeMiniPlayer' onClick={closeMiniPlayer}><FontAwesomeIcon icon={faX} /></div>
                     </div>
                     <div className='buttonContainer'>
                         <div className='playButtonContainer'>

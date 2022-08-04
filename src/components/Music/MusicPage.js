@@ -14,7 +14,7 @@ function MusicPage() {
               <FontAwesomeIcon id='skillIcon' icon={faHtml5} />
               <FontAwesomeIcon id='skillIcon' icon={faCss3Alt} />
             </div>
-            <p>Listen to some music while browsing the site! The music player will dock at the bottom left if navigating to a different page on this site. Project to learn about working with the HTMLMediaElement and to further improve React skills. - WIP</p>
+            <p>Listen to some music while browsing the site! The music player will dock at the bottom left if navigating to a different page on this site.</p>
         </div>
     </div>
   );

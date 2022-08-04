@@ -1,12 +1,22 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .musicAppContainer {
     min-width:1000px;
     min-height:562px;
     width:60vw;
     height:calc(60vw * .5625);
     margin:auto;
+    -webkit-margin-start: auto;
     position:relative;
-    box-shadow: 4px 4px 40px;
+    -webkit-box-shadow: 4px 4px 40px;
+            box-shadow: 4px 4px 40px;
     margin-bottom: 4rem;
+    display:block;
 }
 
 .musicAppContainer > .controlsContainer {
@@ -41,7 +51,8 @@
     width:100%;
     height:calc(100% - 5rem);
     margin:auto;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     position: absolute;
     background-color: whitesmoke;
     top:0px;
@@ -87,7 +98,8 @@
     padding:8px;
     cursor: pointer;
     display:inline-block;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     
 }
 
@@ -175,7 +187,8 @@
 .musicAppContainer > .libraryContainer > #libraryDeck > .libraryDeckContainer > img {
     width:60px;
     height:60px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .musicAppContainer > .libraryContainer > #libraryDeck > .libraryDeckContainer > div {
@@ -274,7 +287,8 @@
 #queueDeck > div > img {
     width:40px;
     height:40px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 #queueDeck > div > div {
@@ -310,14 +324,33 @@
     min-width: 300px;
     min-height: 120px;
     height:100px;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     margin-bottom:0px;
 }
+#closeMiniPlayer {
+    display:block;
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:auto;
+    height:auto;
+    cursor: pointer;
+
+}
+
+#closeMiniPlayer svg {
+    color:whitesmoke;
+    background-color:rgb(29, 46, 46);
+    padding:2px 4px;
+}
+
 .miniMusicBox > div > div > div:nth-child(2) {
     width:100%;
     height:100%;
     border-radius: 12px;
-    box-shadow: 2px 2px 24px;
+    -webkit-box-shadow: 2px 2px 24px;
+            box-shadow: 2px 2px 24px;
 }
 .miniMusicBox > div > div > div:nth-child(2) > div:nth-child(1) {
     top:0px;

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faPenRuler } from '@fortawesome/free-solid-svg-icons';
-import { faJsSquare, faReact, faCss3Alt } from '@fortawesome/free-brands-svg-icons';
+import { faCode, faDatabase, faPalette, faPenRuler, faTerminal, faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
+import { faJsSquare, faReact } from '@fortawesome/free-brands-svg-icons';
 import "./Home.css";
 function Home() {
 
@@ -20,10 +20,10 @@ function Home() {
           <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faReact} /><span>React</span></div>
           <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faCode} /><span>HTML</span></div>
           <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faPenRuler} /><span>CSS</span></div>
-          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faJsSquare} /><span>JavaScript</span></div>
-          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faReact} /><span>React</span></div>
-          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faCode} /><span>HTML</span></div>
-          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faPenRuler} /><span>CSS</span></div>
+          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faTerminal} /><span>PowerShell</span></div>
+          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faDatabase} /><span>SQL</span></div>
+          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faUpRightAndDownLeftFromCenter} /><span>APIs</span></div>
+          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faPalette} /><span>Design</span></div>
         </div>
       </div>
     </div>
