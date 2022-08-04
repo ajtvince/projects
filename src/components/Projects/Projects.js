@@ -39,7 +39,7 @@ function Projects() {
           <FontAwesomeIcon id='skillIcon' icon={faCss3Alt} />
         </div>
         <img id='projectImg' src='./images/audo.png' alt='img'></img>
-        <div id='projectDesc'>Exploration into the HTMLMediaElement and to improve React skills. Customized the controls and added a song library and additional functionality. No additional libraries/frameworks used other than React.</div>
+        <div id='projectDesc'>WIP - Exploration into the HTMLMediaElement and to improve React skills. Customized the controls and added a song library and additional functionality. No additional libraries/frameworks used other than React.</div>
       </div>
       <div className='projectContainer'>
         <div id='projectName'>whotoban.gg&nbsp;&nbsp;&nbsp;<a target='_blank' href='https://github.com/ajtvince/WhoToBan-LoL-Match-Analysis'><FontAwesomeIcon id='skillIcon' icon={faGithub} /></a></div>
