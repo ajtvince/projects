@@ -263,7 +263,7 @@ function Music() {
     }, [currentSongIndex]);
 
     useEffect(() => {
-        console.log(process.env.PUBLIC_URL);
+        document.getElementsByClassName('musicAppContainer')[0].style.display = 'none';
         let audio = document.querySelector('audio');
         audio.addEventListener('ended', () => {
             let newSongIndex = playlist.findIndex(x => (window.location.origin + '/' + x.src) === audio.src);
