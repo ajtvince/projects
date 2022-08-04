@@ -20,6 +20,10 @@ function Home() {
           <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faReact} /><span>React</span></div>
           <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faCode} /><span>HTML</span></div>
           <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faPenRuler} /><span>CSS</span></div>
+          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faJsSquare} /><span>JavaScript</span></div>
+          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faReact} /><span>React</span></div>
+          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faCode} /><span>HTML</span></div>
+          <div className='skillContainer'><FontAwesomeIcon id='skillIcon' icon={faPenRuler} /><span>CSS</span></div>
         </div>
       </div>
     </div>

@@ -1,18 +1,18 @@
 .musicAppContainer {
-    min-width:1280px;
-    min-height:720px;
+    min-width:1000px;
+    min-height:562px;
     width:60vw;
     height:calc(60vw * .5625);
     background-color:whitesmoke;
     margin:auto;
     position:relative;
-    top:4rem;
+    box-shadow: 4px 4px 40px;
 }
 
 .musicAppContainer > .controlsContainer {
     width:30%;    
     height:60%;
-    background-color: rgb(41, 71, 71);
+    background-color: rgb(29, 46, 46);
     padding:0px;
     margin:0px;
     bottom:0px;
@@ -34,6 +34,7 @@
     text-align: center;
     width:100%;
     position: absolute;
+    color:whitesmoke;
 }
 
 .musicAppContainer > .controlsContainer > .songInfoContainer > #albumArt {
@@ -49,7 +50,9 @@
 .musicAppContainer > .controlsContainer > .songInfoContainer > #songName {
     bottom:2rem;
     font-size: 22px;
-    overflow-x:hidden;
+    width:100%;
+    height:36px;
+    overflow: hidden;
 }
 
 .musicAppContainer > .controlsContainer > .songInfoContainer > #artistName {
@@ -73,18 +76,23 @@
 }
 
 .musicAppContainer > .controlsContainer > .buttonContainer > .playButtonContainer > button:hover {
-    background-color:lightgoldenrodyellow;
+    background-color:rgb(34, 54, 54);
 }
 
 .musicAppContainer > .controlsContainer > .buttonContainer > .playButtonContainer > button {
     width: 30%;
-    min-width: 40px;
-    background-color:lightblue;
-    border:rgba(0,0,0,0) solid 2px;
-    padding:1rem;
+    background-color:rgb(29, 46, 46);
+    border:0;
+    border-radius: 8px;
+    padding:8px;
     cursor: pointer;
     display:inline-block;
     box-sizing: border-box;
+    
+}
+
+.musicAppContainer > .controlsContainer > .buttonContainer > .playButtonContainer > button > svg {
+    color: whitesmoke;
 }
 
 .musicAppContainer > .controlsContainer > .buttonContainer > .playButtonContainer > #playButton {
@@ -95,7 +103,7 @@
     width:100%;
     position:absolute;
     height:auto;
-    bottom:24px;
+    bottom:32px;
     left:0px;
 }
 
@@ -103,16 +111,20 @@
     position:relative;
     width:80%;
     margin:auto;
-    background-color: black;
-    height:1rem;
+    background-color: rgb(17, 17, 17);
+    border-radius: 60px;
+    height:12px;
     margin-top:0px;
 }
 
 .musicAppContainer > .controlsContainer > .buttonContainer > .songLength > div > #songProgress {
     width:0;
     height: 4px;
+    top:4px;
     background-color: whitesmoke;
     position: absolute;
+    border-radius: 60px;
+    margin-left:4px;
 }
 
 .musicAppContainer > .controlsContainer > .buttonContainer > .songLength > div > #songProgress > #songProgressIcon {
@@ -132,7 +144,8 @@
     height:auto;
     bottom:0px;
     right:0px;
-    background-color: darkslategray;
+    background-color: rgb(21, 32, 32);
+    color:whitesmoke;
 }
 
 .musicAppContainer > .libraryContainer > #libraryDeck {
@@ -147,10 +160,11 @@
 .musicAppContainer > .libraryContainer > #libraryDeck > .libraryDeckContainer {
     position:relative;
     padding:8px;
+    height:76px;
 }
 
 .musicAppContainer > .libraryContainer > #libraryDeck > .libraryDeckContainer:hover {
-    background-color: rgb(43, 70, 70);
+    background-color: rgb(28, 43, 43);
 }
 
 
@@ -180,7 +194,7 @@
     height:48px;
     line-height: 48px;
     position: relative;
-    background-color: rgb(29, 46, 46);
+    background-color: rgb(15, 24, 24);
     color:white;
 }
 
@@ -202,20 +216,21 @@
     width:30%;
     left:0px;
     top:0px;
-    background-color: rgb(41, 71, 71);
+    background-color: rgb(130, 74, 6);
+    border-top: 4px solid rgb(15, 24, 24);
 }
 
 .musicAppContainer > .queueContainer > .queueTopBar {
     height:84px;
-    background-color: rgb(30, 49, 49);
+    background-color: rgb(104, 59, 5);
     width:100%;
-    color:white;
+    color:whitesmoke;
 }
 
 .musicAppContainer > .queueContainer > .queueTopBar h2 {
     line-height: 48px;
     padding-left: 12px;
-    border-bottom: solid black 2px;
+    border-bottom: solid rgb(87, 49, 4) 2px;
 }
 
 .musicAppContainer > .queueContainer > .queueTopBar .artistInfoTab {
@@ -226,4 +241,118 @@
     display: inline-block;
     width:50%;
     text-align: center;
+}
+
+.queueContainer > #queueDeck {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width:100%;
+    height:calc(100% - 84px);
+}
+
+#queueDeck > div {
+    position:relative;
+    padding:4px;
+    height:48px;
+    background-color:rgb(130, 74, 6);
+}
+
+#queueDeck > div:hover {
+    background-color: rgb(116, 66, 6);
+}
+
+#queueDeck > div > img {
+    width:40px;
+    height:40px;
+    object-fit: cover;
+}
+
+#queueDeck > div > div {
+    position:absolute;
+    display: inline-block;
+    width:auto;
+    padding:6px;
+    color:whitesmoke;
+}
+
+#queueDeck > div > div:nth-child(2) {
+    top:0px;
+    overflow-x: hidden;
+    width:100%;
+}
+
+#queueDeck > div > div:nth-child(3) {
+    top:16px;
+    width:100%;
+    font-size: 12px;
+}
+
+.miniMusicBox > div {
+    min-width: 0;
+    width: 200px;
+    position:fixed;
+    bottom:24px;
+    left:24px;
+}
+.miniMusicBox > div > div{
+    width:300px;
+    min-width: 300px;
+    min-height: 100px;
+    height:100px;
+}
+.miniMusicBox > div > div > div:nth-child(2) > div > img {
+    left:0px;
+    top:0px;
+}
+.miniMusicBox > div > div > div:nth-child(2) > div > img {
+    left:0px;
+    top:0px;
+}
+.miniMusicBox > div > div > div:nth-child(2) {
+    width:100%;
+    height:100%;
+}
+.miniMusicBox > div > div > div:nth-child(3) {
+    display:none;
+    width:0px;
+    height:0px;
+}
+.miniMusicBox > div > div > div:nth-child(4) {
+    display:none;
+    width:0px;
+    height:0px;
+}
+
+.noMiniMusic {
+    display:none;
+}
+
+@media only screen and (max-width:999px) {
+   
+    .musicAppContainer {
+        min-width: 0px;
+        max-width: 100%;
+        min-height: 0px;
+        height:calc(100vh - 4rem);
+        width:100%;
+    }
+
+    .musicAppContainer > .controlsContainer {
+        width:100%;    
+        height:100%;
+        z-index: 2;
+    }
+
+    .musicAppContainer > .controlsContainer > .buttonContainer {
+        height:20%;
+    }
+
+    .musicAppContainer > .controlsContainer > .songInfoContainer {
+        height:80%;
+    }
+    .musicAppContainer > .controlsContainer > .buttonContainer > .songLength {
+        bottom:40px;
+    }
+
 }

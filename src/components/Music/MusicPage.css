@@ -1,0 +1,21 @@
+.musicPageTitle {
+    width:90%;
+    max-width:800px;
+    margin:auto;
+    color:whitesmoke;
+    text-align: center;
+    padding-top:6rem;
+}
+
+.musicPageTitle > div {
+    font-size: 2.2rem;
+}
+
+.musicPageTitle > div > a {
+    color:whitesmoke;
+    font-size:2rem;
+}
+
+#miniMusic {
+    position:relative;
+}

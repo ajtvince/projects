@@ -15,6 +15,26 @@ html,body, * {
 #navbar {
   position: fixed;
   top:0px;
+  z-index:98;
+}
+
+#navOther {
+  position:fixed;
+  top:12px;
+  right:2rem;
+}
+
+#navOther > a {
+  color:whitesmoke;
+  display:inline-block;
+  padding-left:1rem;
+  text-align: left;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+#navOther > a:hover {
+  color:rgb(211, 210, 210);
 }
 
 #navbar > a {
@@ -36,4 +56,48 @@ html,body, * {
   height:100%;
   position:fixed;
   z-index: -1;
+  object-fit: cover;
+  top:0px;
+  bottom:0px;
+}
+
+@media only screen and (max-width: 999px) {
+  
+  #navbarM {
+    display:block;
+    position:fixed;
+    top:16px;
+    left:16px;
+    z-index: 99;
+  }
+
+  #navbarM > div{
+    width:22px;
+    height:4px;
+    background-color: whitesmoke;
+    margin:4px;
+  }
+
+  #navbar {
+    width:100vw;
+    height:100vh;
+    z-index: -99;
+    background-color: rgba(0,0,0,.9);
+    padding-top:4rem;
+  }
+
+  #navbar > a {
+    width:100%;
+    text-align: center;
+    font-size:2rem;
+  }
+
+}
+
+@media only screen and (min-width: 1000px) {
+
+  #navbar {
+    z-index: 98;
+  }
+
 }

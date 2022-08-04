@@ -1,6 +1,7 @@
 .homeContainer {
     width:100%;
     height:100%;
+    padding-top:4rem;
 }
 
 .homeContainer > .homeOverview {
@@ -21,9 +22,15 @@
     font-size:3rem;
 }
 
+.homeSkills {
+    max-width: 800px;
+    margin:auto;
+}
+
 .homeSkills > .skillContainer {
     width:200px;
     display: inline-block;
+    padding-top:24px;
 }
 
 .homeSkills > .skillContainer > span {
@@ -45,4 +52,24 @@
     max-width: 800px;
     height:400px;
     object-fit: cover;
+    border-radius: 30px;
+}
+
+@media only screen and (max-width: 999px) {
+ 
+    .homeContainer > .homeOverview > div:nth-child(1) {
+        font-size: 40px;
+        height:40px;
+    }    
+
+    .homeContainer > .homeOverview > div:nth-child(2) {
+        font-size: 32px;
+    }    
+
+    .homeSkills > .skillContainer {
+        width:50%;
+        display: inline-block;
+        padding:1rem;
+    }
+
 }

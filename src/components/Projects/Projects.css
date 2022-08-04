@@ -1,6 +1,8 @@
 .projectsContainer {
     width:60%;
+    max-width: 1080px;
     margin:auto;
+    padding-top:4rem;
 }
 
 .projectsContainer > .projectContainer {
@@ -11,6 +13,7 @@
 
 .projectsContainer > .projectContainer > img {
     width:100%;
+    border-radius: 4px;
 }
 
 .projectsContainer > .projectContainer > #projectName {
@@ -21,6 +24,12 @@
 .projectsContainer > .projectContainer > #projectName > a {
     font-size: 2rem;
     color:white;
+}
+
+.projectsContainer > .projectContainer > #projectDesc {
+    font-size: 20px;
+    width:80%;
+    margin:auto;
 }
 
 .projectsContainer > .projectContainer > #projectName > a:hover {
@@ -38,3 +47,14 @@
     padding:1rem;
 }
 
+@media only screen and (max-width:999px) {
+
+    .projectsContainer {
+        width:90%;
+    }
+
+    .projectsContainer > .projectContainer > #projectName {
+        font-size:36px;
+    }
+
+}
