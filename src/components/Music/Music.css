@@ -137,6 +137,7 @@
     position: absolute;
     border-radius: 60px;
     margin-left:4px;
+    animation-fill-mode: forwards;
 }
 
 .musicAppContainer > .controlsContainer > .buttonContainer > .songLength > div > #songProgress > #songProgressIcon {
