@@ -47,6 +47,23 @@
     padding:1rem;
 }
 
+#groupImg {
+    width:80%;
+    margin:auto;
+}
+
+#groupImg div {
+    width:50%;
+    display: inline-block;
+    padding:8px;
+}
+
+#groupImg > div > img {
+    width:100%;
+    padding-bottom:8px;
+}
+
+
 @media only screen and (max-width:999px) {
 
     .projectsContainer {
@@ -55,6 +72,11 @@
 
     .projectsContainer > .projectContainer > #projectName {
         font-size:36px;
+    }
+
+    #groupImg {
+        width:80%;
+        margin:auto;
     }
 
 }

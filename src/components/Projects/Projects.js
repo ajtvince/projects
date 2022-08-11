@@ -61,6 +61,24 @@ function Projects() {
         <img id='projectImg' src='./images/tftbuddy.png' alt='img'></img>
         <div id='projectDesc'>This was a personal project that I used to explore the React framework. I started this project when a new game mode in a game I have played was first released, called Teamfight Tactics. This project allowed you to add and remove different champions and items to your team that will then show the synergies between them. You could also search the username of the player to see their match history. This project was put on hold due to the lack on an API for the game at the time. I used HTML, CSS, JavaScript, and ReactJS on this project.</div>
       </div>
+      <div className='projectContainer'>
+        <div id='projectName'>Design/Photography</div>
+        <div style={{textAlign:'center'}} id='projectDesc'>Photography and design exploration.</div>
+        <div id='groupImg'>
+          <div>
+            <img src='./images/kodakPoster.png' alt='img'></img>
+            <img src='./images/stad1.jpg' alt='img'></img>
+            <img src='./images/cottage.jpg' alt='img'></img>
+            <img src='./images/colo2.jpg' alt='img'></img>
+          </div>
+          <div>
+            <img src='./images/stad2.JPG' alt='img'></img>
+            <img src='./images/colo1.jpg' alt='img'></img>
+            <img src='./images/heron.jpg' alt='img'></img>
+            <img src='./images/squadROUGH.png' alt='img'></img>
+          </div>
+        </div>
+      </div>
     </div>
   );
 
