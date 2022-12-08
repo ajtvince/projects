@@ -132,9 +132,8 @@ export default function App() {
     <div>
       <img id='backgroundImg' src='./images/lakemountain.jpg'></img>
       <div id='navbar'>
-        <Link onClick={closeMobileNav} to='/'>Home</Link>
+        <Link onClick={closeMobileNav} to='/'>Projects</Link>
         <Link onClick={closeMobileNav} to='/music'>Music Player</Link>
-        <Link onClick={closeMobileNav} to='/projects'>Projects</Link>
       </div>
       <div onClick={openMobileNav} id='navbarM'>
         <div></div>

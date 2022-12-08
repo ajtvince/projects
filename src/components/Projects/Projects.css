@@ -18,7 +18,7 @@
 
 .projectsContainer > .projectContainer > #projectName {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .projectsContainer > .projectContainer > #projectName > a {
@@ -63,6 +63,34 @@
     padding-bottom:8px;
 }
 
+.nameContainer {
+    width:100%;
+    text-align: center;
+    color:white;
+    font-size: 3rem;
+    padding-top:2rem;
+    padding-bottom:4rem;
+}
+
+.nameContainer > div:nth-child(2) {
+    line-height: 1rem;
+    font-size:2rem;
+}
+
+#projectHeader {
+    font-size:3rem;
+    color:white;
+    text-align: center;
+}
+
+#headerImg {
+    width:80%;
+    height:18rem;
+    object-fit: cover;
+    text-align: center;
+    margin-top:2rem;
+    border-radius: 12px;
+}
 
 @media only screen and (max-width:999px) {
 
@@ -71,7 +99,7 @@
     }
 
     .projectsContainer > .projectContainer > #projectName {
-        font-size:36px;
+        font-size:28px;
     }
 
     #groupImg {

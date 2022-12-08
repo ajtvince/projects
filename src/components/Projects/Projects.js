@@ -8,6 +8,14 @@ import "./Projects.css";
 function Projects() {
   return(
     <div className='projectsContainer'>
+      <div className='nameContainer'>
+        <div>Andrew Vince</div>
+        <div>Front End Developer</div>
+        <img id='headerImg' src='./images/hike.jpg' alt='img'></img>
+      </div>
+
+      <div id='pageBreak'></div>
+      <div id='projectHeader'>Projects</div>
       <div className='projectContainer'>
         <div id='projectName'>JRayl Website Redesign&nbsp;&nbsp;&nbsp;<a target='_blank' href='https://jrayl.com/'><FontAwesomeIcon id='skillIcon' icon={faArrowUpRightFromSquare} /></a></div>
         <div id='projectSkills'>
