@@ -28,6 +28,16 @@ function Projects() {
         <div id='projectDesc'>This was my first experience working on a professional website for a company. Although I was towards the beginning of my degree when I started and finished this project, it was still a huge learning experience for me in regards to building a complete static website and working with a marketing team. I used HTML, CSS, JavaScript, and PHP on this project alongside JavaScript libraries when additional functionality is needed.</div>
       </div>
       <div className='projectContainer'>
+        <div id='projectName'>PoE Ruthless Info Site&nbsp;&nbsp;&nbsp;<a target='_blank' href='https://poeruthless-2xmvfvtxh-ajtvince.vercel.app/skillgems'><FontAwesomeIcon id='skillIcon' icon={faArrowUpRightFromSquare} /></a></div>
+        <div id='projectSkills'>
+          <FontAwesomeIcon id='skillIcon' icon={faReact} />
+          <FontAwesomeIcon id='skillIcon' icon={faHtml5} />
+          <FontAwesomeIcon id='skillIcon' icon={faCss3Alt} />
+        </div>
+        <img id='projectImg' src='./images/poeruth.png' alt='img'></img>
+        <div id='projectDesc'>Website that displays information on the ruthless game mode for Path Of Exile, as well as a tool that allows users to select specific skills they would like to use with a specific character, and the tool calculates the optimal path to gain access to the skills based on the character selected.</div>
+      </div>
+      <div className='projectContainer'>
         <div id='projectName'>Custom Audio Player&nbsp;&nbsp;&nbsp;<a target='_blank' href='https://github.com/ajtvince/projects'><FontAwesomeIcon id='skillIcon' icon={faGithub} /></a></div>
         <div id='projectSkills'>
           <FontAwesomeIcon id='skillIcon' icon={faReact} />
